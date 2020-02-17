@@ -13,7 +13,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-
+    binding.pry
     if @song.save
       redirect_to @song
     else
@@ -26,6 +26,7 @@ class SongsController < ApplicationController
   end
 
   def update
+    binding.pry
     @song = Song.find(params[:id])
 
     @song.update(song_params)
